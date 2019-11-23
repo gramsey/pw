@@ -70,7 +70,7 @@ to retrieve the "password" for "mywebsite" :-
 
 to decrypt and view whole password file 
 ```
-/mnt/pw/bin/pw dump
+/mnt/pw/bin/pw dump < /mnt/pw/pword > /mnt/ram/mypasswords
 ```
 
 

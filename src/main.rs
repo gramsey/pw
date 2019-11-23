@@ -46,7 +46,7 @@ impl PwFile {
     }
 
     fn dump(&self) {
-        let pwfile  = fs::read(&self.pwfile).unwrap();
+        let pwfile  = PwFile::read_stdin();
         let output = self.crypt(&pwfile);
         PwFile::write_stdout(&output);
     }
@@ -84,23 +84,3 @@ fn main() {
     let pwfile = PwFile::new();
     pwfile.run();
 }
-
-
-
-/* 
- *
- * pw clip amazon.co.uk user
- * pw get password amazon.co.uk
- * pw get all amazon.co.uk
- * pw get disk home
- * pw dump > /mnt/ram/myfile
- * pw load < /mnt/ram/myfile
- 
- pw <action> [<lookupkey> <attribute>] 
-
- clip - copy specified attribute value to clipboard
- get - output to stdout
- dump - output full file decrypted to stdout
- load - input file from stdin and encrypt
-
-*/
